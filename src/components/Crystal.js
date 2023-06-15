@@ -1,14 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Crystal = () => {
+
+const Crystal = ({ name , color, powers }) => {
     return (
-        <li>
-            <h2>Crystal Name</h2>
-            <p>Crystal Color</p>    
-            <p>Crystal Powers</p> 
+        <>
+            <h2>{name}</h2>
+            <p>{color}</p>    
+            <p>{powers}</p> 
             <button>Charge</button>   
-        </li>
-    )
-}
+        </>
+    );
+};
 
-export default Crystal
+// call our component. lets other devs know how the components are supposed to work 
+Crystal.propTypes = {
+    name: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    powers: PropTypes.string.isRequired,
+};
+
+export default Crystal;
