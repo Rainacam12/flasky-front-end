@@ -2,7 +2,8 @@ import React from 'react';
 import Crystal from './Crystal';
 import PropTypes from 'prop-types';
 
-const CrystalList = ({ crystals }) => {
+const CrystalList = ({ crystals, increaseCharge, removeCrystal  }) => {
+    // map over so that each crystal can have access to its state 
     const crystalComponents = crystals.map((crystal, index) => {
         return (
         <li key={index}>
@@ -11,6 +12,10 @@ const CrystalList = ({ crystals }) => {
                 name={crystal.name}
                 color={crystal.color}
                 powers={crystal.powers}
+                charges={crystal.charges}
+                increaseCharge={increaseCharge}
+                removeCrystal={removeCrystal}
+
             />
         </li>
         );
